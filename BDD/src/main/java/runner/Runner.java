@@ -4,7 +4,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
-		features="featurefiles",
+		features="featurefiles/ZohoCRM.feature",
 		glue={"stepdefinitions","hooks"},
 		dryRun = false,
 		monochrome = true,
