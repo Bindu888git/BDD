@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class Demo {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -17,6 +17,8 @@ public class Demo {
 		driver.findElement(By.id("userName")).sendKeys("rashmi@dell.com");
 		driver.findElement(By.id("passWord")).sendKeys("123456");
 		driver.findElement(By.xpath("//input[@title='Sign In']")).click();
+		Thread.sleep(2000);
+		System.out.println(driver.getTitle());
 		driver.findElement(By.linkText("Leads")).click();
 		driver.findElement(By.xpath("//input[@value='New Lead']")).click();
 		driver.findElement(By.name("property(Company)")).sendKeys("IBM");
